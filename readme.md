@@ -42,7 +42,7 @@ $ ./bin/faker.php --count 10 word
 ]
 ```
 
-# Multi value generator example
+### Multi value generator example
 
 ```
 $ ./bin/faker.php --count 5 words 2
