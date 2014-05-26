@@ -19,7 +19,7 @@ class GenerateCommand extends Command
 				'locale',
 				'l',
 				InputOption::VALUE_REQUIRED,
-				'The locale to used.',
+				'The locale to use.',
 				Factory::DEFAULT_LOCALE
 			)
 			->addOption(
@@ -70,7 +70,7 @@ class GenerateCommand extends Command
 			->addArgument(
 				'type',
 				InputArgument::REQUIRED,
-				'The data type to generate (e.g. "randomDigit", "words(5)", "name", "city")'
+				'The data type to generate (e.g. "randomDigit", "words", "name", "city")'
 			)
 			->addArgument(
 				'args',
