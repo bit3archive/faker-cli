@@ -7,6 +7,8 @@ This is a command line tool for easy generation of fake data in a static way.
 
 Use `bin/faker.php` to generate fake data on the command line.
 
+### Single value generator example
+
 ```
 $ ./bin/faker.php --count 10 word
 
@@ -24,9 +26,40 @@ $ ./bin/faker.php --count 10 word
 ]
 ```
 
+# Multi value generator example
+
+```
+$ ./bin/faker.php --count 5 words 2
+
+[
+    [
+        "culpa",
+        "consequatur"
+    ],
+    [
+        "quisquam",
+        "recusandae"
+    ],
+    [
+        "asperiores",
+        "accusamus"
+    ],
+    [
+        "nihil",
+        "repellat"
+    ],
+    [
+        "vero",
+        "omnis"
+    ]
+]
+```
+
+### Output formats
+
 You can use different output formats by definint the `--format` option. JSON is the default format.
 
-### XML output
+#### XML output
 
 ```
 $ ./bin/faker.php --format xml --count 10 word
@@ -46,7 +79,7 @@ $ ./bin/faker.php --format xml --count 10 word
 </array>
 ```
 
-### CSV output
+#### CSV output
 
 ```
 $ ./bin/faker.php --format csv --count 10 word
@@ -63,7 +96,7 @@ vero
 omnis
 ```
 
-### PHP output
+#### PHP output
 
 ```
 $ ./bin/faker.php --format php --count 10 word
@@ -82,7 +115,7 @@ array (
 )
 ```
 
-### printf and vprintf output
+#### printf and vprintf output
 
 The printf and vprintf output are mostly equal. But `printf` is designed for single value generator types e.g. `safeEmail` and `vprintf` is designed for multi value generator types e.g. `words 5`.
 
