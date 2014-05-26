@@ -127,20 +127,20 @@ You can also use `printf` with multi value generator types, which will joined by
 ```
 $ ./bin/faker.php --format printf \
   --pattern "INSERT INTO words (uuid, words) VALUES (UUID(), %s);" \
-  --delimiter ', ' \
+  --delimiter ' / ' \
   --enclosure "'" \
   --count 10 words 10
 
-INSERT INTO words (uuid, words) VALUES (UUID(), 'est, illo, consequuntur, dolorem, temporibus, commodi, sint, reiciendis, sint, sunt');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'eum, id, tempora, rerum, occaecati, corrupti, impedit, doloribus, amet, consectetur');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'repudiandae, est, id, amet, odio, facere, nesciunt, voluptas, quia, rerum');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'ad, sed, esse, sed, exercitationem, sed, et, rem, esse, excepturi');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'animi, minus, qui, perferendis, quo, repudiandae, aliquam, dolorem, voluptas, fugiat');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'at, odit, dolorem, a, aperiam, dignissimos, ipsa, sunt, consequatur, alias');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'accusantium, voluptatum, autem, nobis, cumque, neque, modi, iure, voluptatem, error');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'molestiae, consequatur, alias, eligendi, corrupti, illum, commodi, molestiae, aut, repellat');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'id, quisquam, et, sit, consequuntur, aut, et, ullam, asperiores, molestiae');
-INSERT INTO words (uuid, words) VALUES (UUID(), 'cupiditate, culpa, voluptatem, et, mollitia, dolor, sit, nisi, praesentium, qui');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'est / illo / consequuntur / dolorem / temporibus / commodi / sint / reiciendis / sint / sunt');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'eum / id / tempora / rerum / occaecati / corrupti / impedit / doloribus / amet / consectetur');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'repudiandae / est / id / amet / odio / facere / nesciunt / voluptas / quia / rerum');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'ad / sed / esse / sed / exercitationem / sed / et / rem / esse / excepturi');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'animi / minus / qui / perferendis / quo / repudiandae / aliquam / dolorem / voluptas / fugiat');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'at / odit / dolorem / a / aperiam / dignissimos / ipsa / sunt / consequatur / alias');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'accusantium / voluptatum / autem / nobis / cumque / neque / modi / iure / voluptatem / error');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'molestiae / consequatur / alias / eligendi / corrupti / illum / commodi / molestiae / aut / repellat');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'id / quisquam / et / sit / consequuntur / aut / et / ullam / asperiores / molestiae');
+INSERT INTO words (uuid, words) VALUES (UUID(), 'cupiditate / culpa / voluptatem / et / mollitia / dolor / sit / nisi / praesentium / qui');
 ```
 
 It is recommend to use the `--enclosure` option. each occurrence of the `--enclosure` char will be escaped with the `--escape` char, which is `\\` by default.
