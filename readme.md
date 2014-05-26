@@ -17,7 +17,7 @@ $ ./bin/faker.php
  --delimiter (-d) # The delimiter is used by the csv and printf format.
  --enclosure (-e) # The enclosure is used by the csv and printf format.
  --escape (-E)    # The escape character is used by the printf format. (default: "\\")
- --format (-f)    # The output format (json, xml, csv, php) (default: "json")
+ --format (-f)    # The output format (json, xml, csv, php, printf, vprintf) (default: "json")
  --count (-c)     # The count of generated data. (default: 1)
  <type>           # The data type to generate (e.g. "randomDigit", "words", "name", "city")
  <args1>..<argsN> # Arguments for the type, e.g. "words 5" will generate 5 words.
