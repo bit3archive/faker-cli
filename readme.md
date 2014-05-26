@@ -7,6 +7,22 @@ This is a command line tool for easy generation of fake data in a static way.
 
 Use `bin/faker.php` to generate fake data on the command line.
 
+### Parameters and arguments
+
+```
+$ ./bin/faker.php
+ --locale (-l)    # The locale to used. (default: "en_US")
+ --seed (-s)      # The generators seed.
+ --pattern (-p)   # The printf pattern.
+ --delimiter (-d) # The delimiter is used by the csv and printf format.
+ --enclosure (-e) # The enclosure is used by the csv and printf format.
+ --escape (-E)    # The escape character is used by the printf format. (default: "\\")
+ --format (-f)    # The output format (json, xml, csv, php) (default: "json")
+ --count (-c)     # The count of generated data. (default: 1)
+ <type>           # The data type to generate (e.g. "randomDigit", "words", "name", "city")
+ <args1>..<argsN> # Arguments for the type, e.g. "words 5" will generate 5 words.
+```
+
 ### Single value generator example
 
 ```
