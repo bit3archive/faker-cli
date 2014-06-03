@@ -1,0 +1,10 @@
+{
+	"banner": "Faker Command Line Tool",
+	"alias": "faker.phar",
+	"output": "faker.phar",
+	"main": "bin/faker.php",
+	"stub": true,
+	"chmod": "0755",
+	"git-version": "package_version",
+	"directories": ["src", "vendor"]
+}

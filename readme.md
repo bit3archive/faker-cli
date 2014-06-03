@@ -3,9 +3,24 @@
 [Faker](https://github.com/fzaninotto/faker) is a PHP library that generates fake data for you.
 This is a command line tool for easy generation of fake data in a static way. 
 
-## Basic Usage
+## Usage
 
-Use `bin/faker.php` to generate fake data on the command line.
+### As a Phar (Recommended)
+
+You can find the latest phar on the [releases page](https://github.com/bit3/faker-cli/releases).
+
+```bash
+$ wget https://github.com/bit3/faker-cli/releases/download/1.0.2/faker.phar
+$ ./faker.phar
+```
+
+### As a Composer Install
+
+```bash
+$ composer create-project bit3/faker-cli
+$ cd faker-cli
+$ ./bin/faker.php
+```
 
 ### Parameters and arguments
 
@@ -193,6 +208,15 @@ INSERT INTO words (uuid, words) VALUES (UUID(), 'cupiditate / culpa / voluptatem
 ```
 
 It is recommend to use the `--enclosure` option. each occurrence of the `--enclosure` char will be escaped with the `--escape` char, which is `\\` by default.
+
+## Build your own Phar
+
+Install and run php-box:
+
+```bash
+$ curl -LSs http://box-project.org/installer.php | php
+$ ./box.phar build
+```
 
 ## License
 
