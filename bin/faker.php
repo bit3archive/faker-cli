@@ -5,6 +5,11 @@ require(__DIR__ . '/../vendor/autoload.php');
 
 class FakerApplication extends \Symfony\Component\Console\Application
 {
+	public function __construct()
+	{
+		parent::__construct('Faker Command Line Tool', '@package_version@');
+	}
+
 	protected function getCommandName(\Symfony\Component\Console\Input\InputInterface $input)
 	{
 		return 'faker:generate';

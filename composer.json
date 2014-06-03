@@ -1,6 +1,6 @@
 {
 	"name": "bit3/faker-cli",
-	"type": "library",
+	"type": "project",
 	"description": "A command line command for the Faker PHP library.",
 	"keywords": ["faker", "fixtures", "data", "cli"],
 	"license": "MIT",
