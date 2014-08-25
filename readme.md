@@ -10,7 +10,7 @@ This is a command line tool for easy generation of fake data in a static way.
 You can find the latest phar on the [releases page](https://github.com/bit3/faker-cli/releases).
 
 ```bash
-$ wget https://github.com/bit3/faker-cli/releases/download/1.0.3/faker.phar
+$ wget https://github.com/bit3/faker-cli/releases/download/1.0.4/faker.phar
 $ ./faker.phar
 ```
 
