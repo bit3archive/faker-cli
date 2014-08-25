@@ -38,13 +38,15 @@ class GenerateCommand extends Command
 				'delimiter',
 				'd',
 				InputOption::VALUE_REQUIRED,
-				'The delimiter is used by the csv and printf format.'
+				'The delimiter is used by the csv and printf format.',
+				','
 			)
 			->addOption(
 				'enclosure',
 				'e',
 				InputOption::VALUE_REQUIRED,
-				'The enclosure is used by the csv and printf format.'
+				'The enclosure is used by the csv and printf format.',
+				'"'
 			)
 			->addOption(
 				'escape',
@@ -138,7 +140,7 @@ class GenerateCommand extends Command
 	 */
 	protected function outputJson(OutputInterface $output, $data)
 	{
-		$json = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+		$json = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 		$output->write($json);
 	}
 
@@ -266,7 +268,7 @@ class GenerateCommand extends Command
 	protected function outputPrintf(InputInterface $input, OutputInterface $output, $data)
 	{
 		$pattern   = $input->getOption('pattern');
-		$delimiter = $input->getOption('delimiter') ? : ',';
+		$delimiter = $input->getOption('delimiter');
 		$enclosure = $input->getOption('enclosure');
 		$escape    = $input->getOption('escape');
 
