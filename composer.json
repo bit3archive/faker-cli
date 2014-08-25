@@ -13,7 +13,7 @@
 		}
 	],
 	"require": {
-		"php": ">=5.3.3",
+		"php": ">=5.4",
 		"fzaninotto/faker": "~1.0",
 		"symfony/console": "~2.3"
 	},

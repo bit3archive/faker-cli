@@ -140,7 +140,7 @@ class GenerateCommand extends Command
 	 */
 	protected function outputJson(OutputInterface $output, $data)
 	{
-		$json = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+		$json = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 		$output->write($json);
 	}
 
