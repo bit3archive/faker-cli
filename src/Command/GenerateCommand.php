@@ -45,8 +45,7 @@ class GenerateCommand extends Command
 				'enclosure',
 				'e',
 				InputOption::VALUE_REQUIRED,
-				'The enclosure is used by the csv and printf format.',
-				'"'
+				'The enclosure is used by the csv and printf format.'
 			)
 			->addOption(
 				'escape',
@@ -216,7 +215,12 @@ class GenerateCommand extends Command
 		$stream = fopen('php://temp', 'w+');
 
 		foreach ($data as $row) {
-			fputcsv($stream, $this->flattenArray($row), $delimiter, $enclosure);
+			if ($enclosure === null) {
+				fputcsv($stream, $this->flattenArray($row), $delimiter);
+			}
+			else {
+				fputcsv($stream, $this->flattenArray($row), $delimiter, $enclosure);
+			}
 		}
 
 		fseek($stream, 0);
