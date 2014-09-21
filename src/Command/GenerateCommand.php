@@ -59,7 +59,7 @@ class GenerateCommand extends Command
 				'f',
 				InputOption::VALUE_REQUIRED,
 				'The output format (json, xml, csv, php, printf, vprintf)',
-				'json'
+				'vprintf'
 			)
 			->addOption(
 				'count',
