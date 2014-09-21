@@ -66,7 +66,7 @@ class GenerateCommand extends Command
 				'c',
 				InputArgument::OPTIONAL,
 				'The count of generated data.',
-				1
+				10
 			)
 			->addArgument(
 				'type',
