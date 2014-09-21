@@ -10,7 +10,7 @@ This is a command line tool for easy generation of fake data in a static way.
 You can find the latest phar on the [releases page](https://github.com/bit3/faker-cli/releases).
 
 ```bash
-$ wget https://github.com/bit3/faker-cli/releases/download/1.0.5/faker.phar
+$ wget https://github.com/bit3/faker-cli/releases/download/1.1/faker.phar
 $ ./faker.phar
 ```
 
@@ -28,11 +28,11 @@ $ ./bin/faker.php
 $ ./bin/faker.php
  --locale (-l)    # The locale to used. (default: "en_US")
  --seed (-s)      # The generators seed.
- --pattern (-p)   # The printf pattern.
+ --pattern (-p)   # The printf pattern. (default: "%s")
  --delimiter (-d) # The delimiter is used by the csv and printf format.
  --enclosure (-e) # The enclosure is used by the csv and printf format.
  --escape (-E)    # The escape character is used by the printf format. (default: "\\")
- --format (-f)    # The output format (json, xml, csv, php, printf, vprintf) (default: "json")
+ --format (-f)    # The output format (json, xml, csv, php, printf, vprintf) (default: "printf")
  --count (-c)     # The count of generated data. (default: 1)
  <type>           # The data type to generate (e.g. "randomDigit", "words", "name", "city")
  <args1>..<argsN> # Arguments for the type, e.g. "words 5" will generate 5 words.
@@ -41,7 +41,40 @@ $ ./bin/faker.php
 ### Single value generator example
 
 ```
-$ ./bin/faker.php --count 10 word
+$ ./bin/faker.php word
+
+culpa
+consequatur
+quisquam
+recusandae
+asperiores
+accusamus
+nihil
+repellat
+vero
+omnis
+```
+
+### Multi value generator example
+
+```
+$ ./bin/faker.php --count 5 words 2
+
+culpa,consequatur
+quisquam,recusandae
+asperiores,accusamus
+nihil,repellat
+vero,omnis
+```
+
+### Output formats
+
+You can use different output formats by definint the `--format` option. JSON is the default format.
+
+#### JSON output
+
+```
+$ ./bin/faker.php word
 
 [
     "culpa",
@@ -56,8 +89,6 @@ $ ./bin/faker.php --count 10 word
     "omnis"
 ]
 ```
-
-### Multi value generator example
 
 ```
 $ ./bin/faker.php --count 5 words 2
@@ -86,14 +117,10 @@ $ ./bin/faker.php --count 5 words 2
 ]
 ```
 
-### Output formats
-
-You can use different output formats by definint the `--format` option. JSON is the default format.
-
 #### XML output
 
 ```
-$ ./bin/faker.php --format xml --count 10 word
+$ ./bin/faker.php --format xml word
 
 <?xml version="1.0"?>
 <array>
@@ -113,7 +140,7 @@ $ ./bin/faker.php --format xml --count 10 word
 #### CSV output
 
 ```
-$ ./bin/faker.php --format csv --count 10 word
+$ ./bin/faker.php --format csv word
 
 culpa
 consequatur
@@ -130,7 +157,7 @@ omnis
 #### PHP output
 
 ```
-$ ./bin/faker.php --format php --count 10 word
+$ ./bin/faker.php --format php word
 
 array (
   0 => 'culpa',
@@ -154,7 +181,7 @@ The printf and vprintf output are mostly equal. But `printf` is designed for sin
 $ ./bin/faker.php --format printf \
   --pattern "INSERT INTO emails (uuid, email) VALUES (UUID(), %s);" \
   --enclosure "'" \
-  --count 10 safeEmail
+  safeEmail
   
 INSERT INTO emails (uuid, email) VALUES (UUID(), 'dbednar@example.com');
 INSERT INTO emails (uuid, email) VALUES (UUID(), 'xhettinger@example.net');
@@ -172,7 +199,7 @@ INSERT INTO emails (uuid, email) VALUES (UUID(), 'ratke.darlene@example.net');
 ./bin/faker.php --format vprintf \
   --pattern "INSERT INTO keywords (uuid, keyword1, keyword2, keyword3) VALUES (UUID(), %s, %s, %s);" \
   --enclosure "'" \
-  --count 10 words 3
+  words 3
   
 INSERT INTO keywords (uuid, keyword1, keyword2, keyword3) VALUES (UUID(), 'est', 'illo', 'consequuntur');
 INSERT INTO keywords (uuid, keyword1, keyword2, keyword3) VALUES (UUID(), 'dolorem', 'temporibus', 'commodi');
@@ -193,7 +220,7 @@ $ ./bin/faker.php --format printf \
   --pattern "INSERT INTO words (uuid, words) VALUES (UUID(), %s);" \
   --delimiter ' / ' \
   --enclosure "'" \
-  --count 10 words 10
+  words 10
 
 INSERT INTO words (uuid, words) VALUES (UUID(), 'est / illo / consequuntur / dolorem / temporibus / commodi / sint / reiciendis / sint / sunt');
 INSERT INTO words (uuid, words) VALUES (UUID(), 'eum / id / tempora / rerum / occaecati / corrupti / impedit / doloribus / amet / consectetur');
