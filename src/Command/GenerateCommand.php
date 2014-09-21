@@ -32,7 +32,8 @@ class GenerateCommand extends Command
 				'pattern',
 				'p',
 				InputOption::VALUE_REQUIRED,
-				'The printf pattern.'
+				'The printf pattern.',
+				'%s'
 			)
 			->addOption(
 				'delimiter',
@@ -59,14 +60,14 @@ class GenerateCommand extends Command
 				'f',
 				InputOption::VALUE_REQUIRED,
 				'The output format (json, xml, csv, php, printf, vprintf)',
-				'json'
+				'printf'
 			)
 			->addOption(
 				'count',
 				'c',
 				InputArgument::OPTIONAL,
 				'The count of generated data.',
-				1
+				10
 			)
 			->addArgument(
 				'type',
