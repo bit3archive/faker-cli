@@ -10,7 +10,7 @@ This is a command line tool for easy generation of fake data in a static way.
 You can find the latest phar on the [releases page](https://github.com/bit3/faker-cli/releases).
 
 ```bash
-$ wget https://github.com/bit3/faker-cli/releases/download/1.3/faker.phar
+$ wget https://github.com/bit3/faker-cli/releases/download/1.4/faker.phar
 $ ./faker.phar
 ```
 
@@ -241,7 +241,7 @@ It is recommend to use the `--enclosure` option. each occurrence of the `--enclo
 Install and run php-box:
 
 ```bash
-$ curl -LSs http://box-project.org/installer.php | php
+$ curl -LSs https://box-project.github.io/box2/installer.php | php
 $ ./box.phar build
 ```
 
